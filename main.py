@@ -63,18 +63,18 @@ def barcode_reader(img_path):
 
 if __name__ == '__main__':
 
-    ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--image", required = True,
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--image", required = True,
         help = "path to the image file")
-    ap.add_argument("-v", "--view", required = False, default=False, action='store_true',
+    parser.add_argument("-v", "--view", required = False, default=False, action='store_true',
         help = "view image with barcode")
-    ap.add_argument("-s", "--save", required = False, default=False, action='store_true',
+    parser.add_argument("-s", "--save", required = False, default=False, action='store_true',
         help = "save result imag")
-    args = vars(ap.parse_args())
+    args = parser.parse_args()
 
-    image_path = args['image']
-    view = args['view']
-    save = args['save']
+    image_path = args.image
+    view = args.view
+    save = args.save
 
     decoded_objects = barcode_reader(image_path)
     barcode = decoded_objects[0].data.decode('utf-8')
