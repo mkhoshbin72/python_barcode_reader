@@ -1,1 +1,1 @@
-# python_barcode_reader
+# Python |B||a|||r||c|o|d||e Reader
